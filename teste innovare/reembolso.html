@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Novo Reembolso</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+		th, td {
+			text-align: left;
+			padding: 8px;
+		}
+		tr:nth-child(even) {
+			background-color: #f2f2f2;
+		}
+	</style>
+</head>
+<body>
+	<h2>Novo Reembolso</h2>
+	<form name="reembolsoForm" onsubmit="return validateForm()" method="post">
+		<label for="solicitante">Solicitante:</label><br>
+		<input type="text" id="solicitante" name="solicitante"><br>
+		<label for="data">Data do Lançamento:</label><br>
+		<input type="date" id="data" name="data"><br><br>
+		<h3>Despesas</h3>
+		<table>
+			<thead>
+				<tr>
+					<th>Valor da Despesa</th>
+					<th>Tipo da Despesa</th>
+				</tr>
+			</thead>
+			<tbody id="despesas">
+				<tr>
+					<td><input type="number" step="0.50" name="valor[]" required></td>
+					<td><input type="text" name="tipo[]" required></td>
+				</tr>
+				<tr>
+					<td><input type="number" step="0.50" name="valor[]" required></td>
+					<td><input type="text" name="tipo[]" required></td>
+				</tr>
+			</tbody>
+		</table>
+		<button type="button" onclick="addDespesa()">Adicionar Despesa</button><br><br>
+		<input type="submit" value="Salvar">
+		<input type="submit" onclick="addDespesa() ; return false">
+	</form>
+	<script src="js/reembolso.js"></script>
+</body>
+</html>

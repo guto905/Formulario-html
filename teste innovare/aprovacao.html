@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Aprovação de Reembolsos</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+		th, td {
+			text-align: left;
+			padding: 8px;
+		}
+		tr:nth-child(even) {
+			background-color: #f2f2f2;
+		}
+	</style>
+</head>
+<body>
+	<h2>Reembolsos Pendentes</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Solicitante</th>
+				<th>Data do Lançamento</th>
+				<th>Total</th>
+				<th>Status</th>
+				<th>Ação</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>João Silva</td>
+				<td>2023-04-18</td>
+				<td>R$ 50,00</td>
+				<td>Pendente</td>
+				<td><button onclick="verDetalhes()">Ver Detalhes</button></td>
+			</tr>
+			<tr>
+				<td>Maria Santos</td>
+				<td>2023-04-17</td>
+				<td>R$ 150,00</td>
+				<td>Pendente</td>
+				<td><button onclick="verDetalhes()">Ver Detalhes</button></td>
+			</tr>
+		</tbody>
+	</table>
+	<div id="detalhes" style="display: none;">
+		<h2>Detalhes do Reembolso</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Valor da Despesa</th>
+					<th>Tipo da Despesa</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>R$ 30,00</td>
+					<td>Táxi</td>
+				</tr>
+				<tr>
+					<td>R$ 20,00</td>
+					<td>Jantar</td>
+				</tr>
+			</tbody>
+		</table>
+		<button onclick="aprovar()">Aprovar</button>
+		<button onclick="reprovar()">Reprovar</button>
+	</div>
+	<script src="js/aprovacao.js"></script>
+</body>
+</html>
